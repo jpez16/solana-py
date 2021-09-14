@@ -14,7 +14,7 @@ class AsyncHTTPProvider(AsyncBaseProvider, _HTTPProviderCore):
     def __init__(self, endpoint: Optional[str] = None):
         """Init AsyncHTTPProvider."""
         super().__init__(endpoint)
-        self.session = httpx.AsyncClient()
+        self.session = httpx.AsyncClient(timeout=None)
 
     def __str__(self) -> str:
         """String definition for HTTPProvider."""
